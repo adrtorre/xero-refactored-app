@@ -1,0 +1,236 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Xero-Products",
+		"_postman_id": "cc943e69-a84b-8b39-fff8-848589d89bcb",
+		"description": "Xero Refactored Application tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Products",
+			"request": {
+				"url": "http://localhost:53878/Products",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Search Products By Name",
+			"request": {
+				"url": {
+					"raw": "http://localhost:53878/Products/_search?name=p",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "53878",
+					"path": [
+						"Products",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "p",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product By Id",
+			"request": {
+				"url": "http://localhost:53878/Products/35418e43-d563-475f-7dbd-08d768c571ca",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create new Product",
+			"request": {
+				"url": "http://localhost:53878/Products",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Samsung Galaxy X\",\n\t\"description\": \"awesome product\",\n\t\"price\": 1999.99,\n\t\"deliveryPrice\": 19.99\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update existing Product",
+			"request": {
+				"url": "http://localhost:53878/Products/0ac2bec4-fe94-4baf-f920-08d768f921ca",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"0ac2bec4-fe94-4baf-f920-08d768f921ca\",\n\t\"name\": \"Samsung Galaxy X\",\n\t\"description\": \"next gen product\",\n\t\"price\": 1999.99,\n\t\"deliveryPrice\": 19.99\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"url": "http://localhost:53878/Products/0ac2bec4-fe94-4baf-f920-08d768f921ca",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"0ac2bec4-fe94-4baf-f920-08d768f921ca\",\n\t\"name\": \"Samsung Galaxy X\",\n\t\"description\": \"next gen product\",\n\t\"price\": 1999.99,\n\t\"deliveryPrice\": 19.99\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product options",
+			"request": {
+				"url": "http://localhost:53878/Products/8f2e9176-35ee-4f0a-ae55-83023d2db1a3/options",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product option for given product Id and option id",
+			"request": {
+				"url": "http://localhost:53878/Products/8f2e9176-35ee-4f0a-ae55-83023d2db1a3/options/0643ccf0-ab00-4862-b3c5-40e2731abcc9",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create product option for a product",
+			"request": {
+				"url": "http://localhost:53878/Products/ba6ec4e8-d03f-435e-663b-08d768f7984e/options",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"option A\",\n\t\"description\": \"option A is awesome!\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update product option for a product",
+			"request": {
+				"url": "http://localhost:53878/Products/ba6ec4e8-d03f-435e-663b-08d768f7984e/options/e1677244-65b9-4f5e-b417-08d768fa59ff",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"e1677244-65b9-4f5e-b417-08d768fa59ff\",\n\t\"productId\": \"ba6ec4e8-d03f-435e-663b-08d768f7984e\",\n\t\"name\": \"option A\",\n\t\"description\": \"option A is okay\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product option for a product",
+			"request": {
+				"url": "http://localhost:53878/Products/ba6ec4e8-d03f-435e-663b-08d768f7984e/options/e1677244-65b9-4f5e-b417-08d768fa59ff",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"e1677244-65b9-4f5e-b417-08d768fa59ff\",\n\t\"productId\": \"ba6ec4e8-d03f-435e-663b-08d768f7984e\",\n\t\"name\": \"option A\",\n\t\"description\": \"option A is okay\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
