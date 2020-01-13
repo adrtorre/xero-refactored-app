@@ -1,0 +1,5 @@
+FROM mono
+EXPOSE 8080
+
+RUN ls
+RUN pwd
