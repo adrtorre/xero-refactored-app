@@ -1,5 +1,7 @@
-FROM mono
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 EXPOSE 8080
 
-RUN ls
-RUN pwd
+COPY XeroRefactoredApp/bin/Debug/netcoreapp3.0 /app
+WORKDIR /app
+
+ENTRYPOINT ["dotnet","XeroRefactoredApp.dll"]
