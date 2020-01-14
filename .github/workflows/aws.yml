@@ -58,7 +58,6 @@ jobs:
 
     - name: Building .NET package
       id: build-app
-      if: success()
       run:
         dotnet build
 
