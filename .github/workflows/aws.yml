@@ -51,6 +51,16 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
+    - name: Running unit tests
+      id: run-unit-tests
+      run:
+        dotnet test
+
+    - name: Building .NET package
+      id: build-app
+      run:
+        dotnet build
+
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
