@@ -54,7 +54,7 @@ jobs:
     - name: Running Unit Tests for project
       id: unit-Tests
       run:
-        dotnet testqq
+        dotnet test
 
     - name: Building .NET package
       id: build-app
