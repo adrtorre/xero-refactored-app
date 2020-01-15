@@ -67,13 +67,16 @@ jobs:
         ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
         ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
         IMAGE_TAG: ${{ github.sha }}
+      with:
+        app-name: xero-app
       run: |
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -t ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG .
-        docker push ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG
-        echo "::set-output name=image::${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG"
+        docker build -t ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}/${{ app-name }}:$IMAGE_TAG .
+        docker push ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}/${{ app-name }}:$IMAGE_TAG
+        echo "::set-output name=image::${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}/${{ app-name }}:$IMAGE_TAG"
+
 
     # - name: Fill in the new image ID in the Amazon ECS task definition
     #   id: task-def
