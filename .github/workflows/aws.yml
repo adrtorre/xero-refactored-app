@@ -74,7 +74,7 @@ jobs:
         # be deployed to ECS.
         docker build -t ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:$VERSION .
         docker push ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:$VERSION
-        echo "::set-output name=image::${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}/xero-app:$VERSION"
+        echo "::set-output name=image::${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:$VERSION"
 
 
     # - name: Fill in the new image ID in the Amazon ECS task definition
